@@ -24,5 +24,12 @@ Pipeline relies on the following excellent packages (which are automatically ins
 - [numpy](http://www.numpy.org/) (>=1.16.0)
 - [pandas](https://pandas.pydata.org/)
 
-### Instructions  
-<img src=DOCS/workflow.png width=500 height=725>
+### Instructions
+<img src=DOCS/workflow.png width=500 align="right" vspace = "50">
+The pipeline follows the general workflow included in the image to the right. Briefly, the sequence-to-function mutation dataset is formatted such that it follows the shape of [(# variants) x (len(sequence)+ 1 primary ID column + 1 mutant performance column)]. Next, a novel point mutation library is used by reading the cleaned sequence-to-function mutation dataset and finding each residue position in which a mutation exists. After finding these residue locations, it saturates each position for all of the 20 amino acids. It then removes any redundant sequences that already exist in the known sequence-to-function mutation dataset. This data is then fed to each of three different regressor types, and each regressor is trained/optimized, and the performance of different encoding datasets is monitored. Once top-performing encoding datasets are found, models use these encoding datasets to generate predictions on the novel sequence library and the withheld test dataset. Within the same function/notebook, the results are averaged for an ensemble prediction for each novel sequence and each withheld variant in the test set. These results are cached for downstream analysis and used to determine mutations of interest.
+
+## From master.py
+
+## From Jupyter Notebook
+1. 
+
