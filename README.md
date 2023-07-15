@@ -22,7 +22,7 @@ Linux, Windows, and Mac OS are supported for running the platform.
 ### Dependencies
 Pipeline relies on the following excellent packages (which are automatically installed with conda/pip if missing):
 - [numpy](http://www.numpy.org/) (>=1.16.0)
-- [pandas]([https://pandas.pydata.org/)
+- [pandas](https://pandas.pydata.org/)
 
 ### Instructions  
 
