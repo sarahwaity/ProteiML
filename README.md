@@ -10,7 +10,7 @@ Real-time monitoring of biological activity can be achieved through the use of g
 
 
 ### CITATION
-**If you use the machine learning platform, please cite our paper! [paper]([https://t.co/kBMXmPp3Yn?amp=1](https://doi.org/10.1101/2023.04.13.536801)):**  
+**If you use the machine learning platform, please cite our paper! [paper]([https://doi.org/10.1101/2023.04.13.536801]):**  
 
 # Installation
 
