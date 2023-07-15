@@ -25,5 +25,4 @@ Pipeline relies on the following excellent packages (which are automatically ins
 - [pandas](https://pandas.pydata.org/)
 
 ### Instructions  
-
-
+<img src=DOCS/workflow.png width=500 height=725>
