@@ -1,7 +1,9 @@
 # GCaMP_Machine_Learning_Ensemble
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Machine learning pipeline that underlies the findings found in: https://doi.org/10.1101/2023.04.13.536801
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 #[![Build Status]()
 
@@ -10,9 +12,9 @@ Real-time monitoring of biological activity can be achieved through the use of g
 
 
 ### CITATION
-**If you use the machine learning platform, please cite our paper! [paper]([https://doi.org/10.1101/2023.04.13.536801]):**  
+**If you use the machine learning platform, please cite our [pre-print](https://doi.org/10.1101/2023.04.13.536801)!**  
 
-# Installation
+## Installation
 
 ### System requirements
 Linux, Windows, and Mac OS are supported for running the platform. 
