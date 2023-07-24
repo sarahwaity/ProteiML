@@ -3,18 +3,39 @@
 import pandas as pd
 import numpy as np
 import logging
-from typing import List
-from main import STANDARD_DATA_DIR
+from typing import List, Union, Dict, Tuple
+from data_processing.constants import STANDARD_DATA_DIR
 
 
-def get_col_count(base_variant_seq, biophysical_property_final):
+def get_col_count(
+    base_variant_seq: str, biophysical_property_final: str
+) -> List[Union[str, int]]:
+    """generates a list of columns to be referenced later
+
+    Args:
+        base_variant_seq (str): sequence that the library was based off of ('base' in chen and dana datasets)
+        biophysical_property_final (str): what we would like the biophysical property to be referenced by in the final df
+
+    Returns:
+        List[Union[str, int]]: list of column names
+    """
     cols = list(np.arange(0, len(base_variant_seq)))
     cols.append("Variant ID")
     cols.append(biophysical_property_final)
     return cols
 
 
-def read_seq_data(metadata):
+def read_seq_data(
+    metadata: Dict[str, str]
+) -> Tuple[pd.DataFrame, List[Union[int, str]]]:
+    """imports the known sequence-to-variant library and formats it to be read by machine learning algorithms.
+
+    Args:
+        metadata (Dict[str, str]): dict that contains all information found in the input .csv
+
+    Returns:
+        Tuple[pd.Dataframe, List[Union[int, str]]]: formatted sequence-to-function library and list of columns for the final df
+    """
     # read in mutation library for GCaMP6
     seq_data = pd.read_csv(STANDARD_DATA_DIR / metadata["Mutant Data File Path"])
 
@@ -44,7 +65,8 @@ def read_seq_data(metadata):
 
     # columns for output dataframe
     cols = get_col_count(
-        metadata["Sequence of Base Variant"], metadata["Desired Name of Dependent Variable"]
+        metadata["Sequence of Base Variant"],
+        metadata["Desired Name of Dependent Variable"],
     )
 
     ##Formatting Mutation Strings To Residue/Amino Acid Format
@@ -145,7 +167,15 @@ def read_seq_data(metadata):
     return df_seq, cols
 
 
-def combine_seq_datasets(df_list: List[pd.DataFrame]):
+def combine_seq_datasets(df_list: List[pd.DataFrame]) -> pd.DataFrame:
+    """if multiple variant dataframes are passed, this concats the dataframes to form one large one. 
+
+    Args:
+        df_list (List[pd.DataFrame]): list of sequence librarys, one for each provided dataset.
+
+    Returns:
+        pd.DataFrame: concatenated dataframe with all mutation datasets provided and formatted
+    """
     ## Combining the Two Datasets:
     # concatenate the two sequence libraries
     combined_df = pd.DataFrame()
@@ -157,8 +187,22 @@ def combine_seq_datasets(df_list: List[pd.DataFrame]):
 
 
 def check_for_duplicates(
-    combined_df, cols, base_variant_sequence_length, biophysical_property_final
-):
+    combined_df: pd.DataFrame,
+    cols: List[Union[int, str]],
+    base_variant_sequence_length: int,
+    biophysical_property_final: str,
+)->pd.DataFrame:
+    """isloates any duplicate sequences that exist in the combined_df and removes them, it averages all sequences that match and averages their dependent variable before appending back to the combined_df
+
+    Args:
+        combined_df (pd.DataFrame): output df of combine_seq_datasets
+        cols (List[Union[int, str]]): list of columns to be used in the final dataframe
+        base_variant_sequence_length (int): used to find the columns that contain sequence
+        biophysical_property_final (str): chosen descriptor for the prediction dependent variable
+
+    Returns:
+        pd.DataFrame: sequence-to-function library where any duplicated values are averaged. 
+    """
     ## Duplicate Values Check
 
     cols_1 = list(np.arange(0, base_variant_sequence_length))

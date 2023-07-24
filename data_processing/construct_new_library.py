@@ -1,12 +1,25 @@
 # MAIN PACKAGES
-import numpy as np
+import pathlib as pl
 import pandas as pd
 import logging
+from typing import Tuple
 
 
 def create_variant_dataframe(
-    variant_library_filepath, reference_variant_for_base_mutation, variant_name
-):
+    variant_library_filepath: pl.Path,
+    reference_variant_for_base_mutation: str,
+    variant_name: str,
+) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Constructs a point mutation library based off of a chosen variant. 
+
+    Args:
+        variant_library_filepath (pl.Path): string that contains path to known variant library 
+        reference_variant_for_base_mutation (str): name of the base construct variant as it appears in variant library file
+        variant_name (str): name descriptor of the base construct variant (reference_variant_for_base_mutation and variant_name may be identical)
+
+    Returns:
+        Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]: point mutation library, known sequences, sequence and ID of base construct
+    """
     # data input and sorting
     data = pd.read_csv(variant_library_filepath, index_col=0)
     data = data.sort_values(by="Variant ID", ascending=False)
@@ -17,7 +30,9 @@ def create_variant_dataframe(
     ref_var_index = data.loc[reference_variant_for_base_mutation][cols]
     base_sequence = list(ref_var_index)
 
-    base_info = list(data.loc[reference_variant_for_base_mutation][cols].values)+ [variant_name]
+    base_info = list(data.loc[reference_variant_for_base_mutation][cols].values) + [
+        variant_name
+    ]
 
     # isolate the columns with sequence data
     testing_df = data[cols]
@@ -69,13 +84,23 @@ def create_variant_dataframe(
     variant_df.reset_index(inplace=True, drop=True)
     variant_df = variant_df.set_axis(cols, axis=1)
     variant_df["mutant_name"] = name_list  # adds identity of each mutation
-    
+
     return variant_df, testing_df, base_info
 
 
 def clean_variant_dataframe(
-    variant_df, testing_df, base_info
-):
+    variant_df: pd.DataFrame, testing_df: pd.DataFrame, base_info: pd.DataFrame
+) -> pd.DataFrame:
+    """takes the point mutation library (variant dataframe) and compares the sequence to the known variant library, removes any duplicates if they exist. 
+
+    Args:
+        variant_df (pd.DataFrame): point mutation library based on base construct
+        testing_df (pd.DataFrame): all the sequences that are contained in the known variant library
+        base_info (pd.DataFrame): contains sequence and identity of base construct
+
+    Returns:
+        pd.DataFrame: point mutation library of unknown sequences
+    """
     ##Duplicate Values Check
     # takes all of the sequences from the known library
     comparison_massive_list_set = [
@@ -103,10 +128,9 @@ def clean_variant_dataframe(
         + " Duplicate Variants Found and Removed"
     )
 
-    base_var_df = pd.DataFrame([base_info], columns =variant_df_cleaned.columns)
+    base_var_df = pd.DataFrame([base_info], columns=variant_df_cleaned.columns)
 
-    variant_df_cleaned = pd.concat([base_var_df,
-                                    variant_df_cleaned])
+    variant_df_cleaned = pd.concat([base_var_df, variant_df_cleaned])
 
     logging.info(f"Variant DF Cleaned. Shape: {variant_df_cleaned.shape}")
     return variant_df_cleaned
