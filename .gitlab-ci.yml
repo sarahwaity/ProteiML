@@ -3,7 +3,7 @@ image: python:3.8
 stages:
   - test
   - lint
-  - deplot
+  - deploy
 
 before_script:
   - pip install poetry
