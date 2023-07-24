@@ -4,7 +4,7 @@ import pytest
 
 @pytest.fixture
 def metadata_fixture():
-    raw_input = pd.read_csv(BACKEND_DATA_DIR / "Kinetics_Input_Data.csv")
+    raw_input = pd.read_csv(BACKEND_DATA_DIR / "Input_Data.csv")
 
     return raw_input.to_dict(orient="records")
 
