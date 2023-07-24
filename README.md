@@ -1,6 +1,6 @@
 # ProteiML
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/{ProteiML}.svg)](https://zenodo.org/badge/latestdoi/{ProteiML})
+[![DOI](https://zenodo.org/badge/{666693326}.svg)](https://zenodo.org/badge/latestdoi/{666693326})
 
 Machine learning pipeline that underlies the findings found in: https://doi.org/10.1101/2023.04.13.536801
 
