@@ -1,7 +1,7 @@
 # ProteiML
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Documentation Status](https://readthedocs.org/projects/proteiml/badge/?version=latest)](https://proteiml.readthedocs.io/en/latest/?badge=latest)
-[![DOI](https://zenodo.org/badge/{666693326}.svg)](https://zenodo.org/badge/latestdoi/{666693326})
+[![DOI](https://zenodo.org/badge/666693326.svg)](https://zenodo.org/badge/latestdoi/666693326)
 #[![Build Status]()
 
 `ProteiML` is a machine learning ensemble pipeline that reads in sequence-to-function mutational datasets and outputs suggested mutations in order to optimize protein functionality. 
@@ -16,7 +16,7 @@
 
 
 ### CITATION
-*If you use the `ProteiML`, please cite our [pre-print](https://doi.org/10.1101/2023.04.13.536801)!*  
+*If you use `ProteiML`, please cite our [pre-print](https://doi.org/10.1101/2023.04.13.536801)!*  
 
 
 # Overview
