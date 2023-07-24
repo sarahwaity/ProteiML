@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import logging
 from typing import List, Union, Dict, Tuple
-from data_processing.constants import STANDARD_DATA_DIR
+from data_processing.constants import BACKEND_DATA_DIR
 
 
 def get_col_count(
@@ -37,7 +37,7 @@ def read_seq_data(
         Tuple[pd.Dataframe, List[Union[int, str]]]: formatted sequence-to-function library and list of columns for the final df
     """
     # read in mutation library for GCaMP6
-    seq_data = pd.read_csv(STANDARD_DATA_DIR / metadata["Mutant Data File Path"])
+    seq_data = pd.read_csv(BACKEND_DATA_DIR / metadata["Mutant Data File Path"])
 
     # isolate the column that contains the mutations added to each variant
     mutation_data = seq_data[metadata["Mutations Column"]]

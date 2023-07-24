@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import logging
 from typing import Union, List, Dict, Tuple
+from datetime import date
 
 from data_processing.constants import *
 from data_processing import format_mutation_dataset as fmr
@@ -12,7 +13,6 @@ from data_processing import scrape_aaindex_matrix as sam
 from data_processing import model_training as mt
 from data_processing import model_prediction as mp
 from data_processing import ensemble_and_cross_validate as ecv
-
 
 def create_project_directories(
     directories: Union[List[str], str] = STANDARD_DIRECTORIES
@@ -27,11 +27,11 @@ def create_project_directories(
     """
     if type(directories) is list:
         for dir_name in directories:
-            logging.info(f"Checking/Creating {pl.Path(os.getcwd()) / dir_name}")
-            os.makedirs(f"{pl.Path(os.getcwd()) / dir_name}", exist_ok=True)
+            logging.info(f"Checking/Creating {BASE_DIR / dir_name}")
+            os.makedirs(BASE_DIR / dir_name, exist_ok=True)
     elif type(directories) is str:
-        logging.info(f"Checking/Creating {pl.Path(os.getcwd()) / directories}")
-        os.makedirs(f"{pl.Path(os.getcwd()) / dir_name}", exist_ok=True)
+        logging.info(f"Checking/Creating {BASE_DIR / directories}")
+        os.makedirs(BASE_DIR /  dir_name, exist_ok=True)
     else:
         raise ValueError("Input must be of type list or str.")
 
@@ -50,7 +50,7 @@ def load_input_csv_into_metadata_list(input_filepath: pl.Path) -> List[Dict[str,
     return raw_input.to_dict(orient="records")
 
 
-def format_mutation_dataset(
+def ingest_and_format_mutation_dataset(
     metadata_dictionary_list: List[Dict[str, str]]
 ) -> pd.DataFrame:
     """Formats the supplied mutation dataframe into a format that can be understood by machine learning models. 
@@ -111,7 +111,7 @@ def clean_variants(metadata_list: List[Dict[str, str]]) -> pd.DataFrame:
     variant_name = metadata_list[0]["Variant For Optimization Name"]
 
     variant_df, testing_df, base_info = cnl.create_variant_dataframe(
-        variant_library_filepath=STANDARD_DATA_DIR / "combined_dataset.csv",
+        variant_library_filepath=BACKEND_DATA_DIR / "combined_dataset.csv",
         reference_variant_for_base_mutation=reference_variant_for_base_mutation,
         variant_name=variant_name,
     )
@@ -134,11 +134,11 @@ def scrape_aaindex_for_properties() -> pd.DataFrame:
     if SCRAPE_AAINDEX == True:
         clean_names = sam.scrape_aaindex_indicies()
         property_dataset = sam.find_accession_numbers(clean_names)
-        property_dataset.to_csv(STANDARD_DATA_DIR / "AAINDEX_Property_Dataset.csv")
+        property_dataset.to_csv(BACKEND_DATA_DIR / AAINDEX_DB)
         return property_dataset
 
     else:
-        return pd.read_csv(STANDARD_DATA_DIR / AAINDEX_DB, index_col=0)
+        return pd.read_csv(BACKEND_DATA_DIR / AAINDEX_DB, index_col=0)
 
 
 def prepare_and_train_models(
@@ -192,9 +192,6 @@ def retrain_and_get_novel_predictions(
         novel_library_path (pl.Path): path to the novel point mutation library 
         top_encoding_dataset_paths (Dict[str,str]): path to output of prepare_and_train_models function, one dataframe per regressor type, that contain information regarding encoding dataset and R squared achieved.
         dependent_variable (str): name of the variable for optimization
-
-    Returns:
-        Tuple[np.array, np.array, np.array, np.array, pd.DataFrame]: _description_
     """
     x_train, x_test, y_train, y_test, encoded_df = mt.prepare_encoding_data(
         combined_dataset, len_sequence_of_base_variant, dependent_var=dependent_variable
@@ -282,16 +279,16 @@ if __name__ == "__main__":
 
     ## Load Input File
     metadata_list = load_input_csv_into_metadata_list(
-        input_filepath=STANDARD_DATA_DIR / STANDARD_INPUT_DATA
+        input_filepath=BACKEND_DATA_DIR / STANDARD_INPUT_DATA
     )
 
     ## Format and Combine Input Datasets
-    combined_df = format_mutation_dataset(metadata_list)
-    combined_df.to_csv(STANDARD_DATA_DIR / "combined_dataset.csv")
+    combined_df = ingest_and_format_mutation_dataset(metadata_list)
+    combined_df.to_csv(INTERMEDIATE_DATA_DIR / "combined_dataset.csv")
 
     ## Clean and save variant data
     cleaned_variants = clean_variants(metadata_list)
-    cleaned_variants.to_csv(STANDARD_DATA_DIR / "novel_variant_library.csv")
+    cleaned_variants.to_csv(INTERMEDIATE_DATA_DIR / "novel_variant_library.csv")
 
     ## Scrape properties data.
     property_dataset = scrape_aaindex_for_properties()
@@ -318,7 +315,7 @@ if __name__ == "__main__":
         combined_dataset=combined_df,
         len_sequence_of_base_variant=len(metadata_list[0]["Sequence of Base Variant"]),
         dependent_variable=metadata_list[0]["Desired Name of Dependent Variable"],
-        novel_library_path=STANDARD_DATA_DIR / "novel_variant_library.csv",
+        novel_library_path=INTERMEDIATE_DATA_DIR / "novel_variant_library.csv",
         top_encoding_dataset_paths=top_encoding_dataset_paths,
     )
 

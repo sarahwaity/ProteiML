@@ -192,7 +192,7 @@ def train_knr_model(
 
             df_KNR = pd.concat([df_KNR, inter_df], ignore_index=True)
 
-    df_KNR.sort_values(by="Test Set R Squared", ascending=False)
+    df_KNR = df_KNR.sort_values(by="Test Set R Squared", ascending=False)
 
     return df_KNR
 
