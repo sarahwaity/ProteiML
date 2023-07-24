@@ -22,4 +22,4 @@ jobs:
         poetry install --no-root
     - name: Test with pytest
       run: |
-        cd ProteiML && python -m pytest --cov-report term --cov=. tests/
+        python -m pytest --cov-report term --cov=. tests/
