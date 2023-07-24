@@ -1,8 +1,26 @@
+image: python:3.8
+
 stages:
   - test
+  - lint
+  - deplot
 
-test:
-  stage:
-    - test
+before_script:
+  - pip install poetry
+  - poetry config virtualenvs.create false
+  - poetry install
+
+Unit Tests:
+  stage: test
   script:
-    - echo "Success!"
+    - poetry run pytest
+
+Python Code Lint:
+  stage: test
+  script:
+    - poetry run black .
+
+Deplot:
+  stage: deploy
+  script:
+    - deploy_script  
