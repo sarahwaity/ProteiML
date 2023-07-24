@@ -15,7 +15,7 @@
 
 
 ### CITATION
-**If you use the machine learning platform, please cite our [pre-print](https://doi.org/10.1101/2023.04.13.536801)!**  
+*If you use the `ProteiML`, please cite our [pre-print](https://doi.org/10.1101/2023.04.13.536801)!*  
 
 
 # Overview
@@ -36,7 +36,7 @@ This package is supported for *macOS* and *Linux*. The package has been tested o
 `ProteiML` mainly depends on the Python scientific stack. 
 *A full list of dependencies can be found in the pyproject.toml file.*
 
-- [numpy](http://www.numpy.org/) (>=1.16.0)
+- [numpy](http://www.numpy.org/)
 - [pandas](https://pandas.pydata.org/)
 - [SciPy](https://scipy.org/)
 - [scikit-learn](https://scikit-learn.org/stable/)
