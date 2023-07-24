@@ -9,6 +9,7 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: poetry
+            command: poetry env use 3.8.5
       - run:
           name: Run tests
           command: python -m pytest
