@@ -101,7 +101,7 @@ def retrain_predict_knr(
         # extract encoding data for specific iteration
         volume_dict = {
             "Amino Acid Code": encoding_data[encoding_data.columns[0]],
-            AA_property_dataset[-11:]: encoding_data[AA_property_dataset],
+            AA_property_dataset[-10:]: encoding_data[AA_property_dataset],
         }
         volume_data = pd.DataFrame(volume_dict)
 
@@ -207,7 +207,7 @@ def retrain_predict_knr(
             # append the data to a dataframe for export
             inter_df = pd.DataFrame(
                 {
-                    "Encoding Dataset": [AA_property_dataset[-11:]],
+                    "Encoding Dataset": [AA_property_dataset[-10:]],
                     "Test Set R Squared": [r2],
                 }
             )
@@ -229,10 +229,10 @@ def retrain_predict_knr(
 
             # file saving
             newmut.to_csv(
-                save_path / f"{AA_property_dataset[-11:]}_novel_library_predictions.csv"
+                save_path / f"{AA_property_dataset[-10:]}_novel_library_predictions.csv"
             )
             test_set_df.to_csv(
-                save_path / f"{AA_property_dataset[-11:]}_test_set_predictions.csv"
+                save_path / f"{AA_property_dataset[-10:]}_test_set_predictions.csv"
             )
 
 
@@ -278,7 +278,7 @@ def retrain_predict_mpnr(
         # extract encoding data for specific iteration
         volume_dict = {
             "Amino Acid Code": encoding_data[encoding_data.columns[0]],
-            AA_property_dataset[-11:]: encoding_data[AA_property_dataset],
+            AA_property_dataset[-10:]: encoding_data[AA_property_dataset],
         }
         volume_data = pd.DataFrame(volume_dict)
 
@@ -372,7 +372,7 @@ def retrain_predict_mpnr(
             # append the data to a dataframe for export
             inter_df = pd.DataFrame(
                 {
-                    "Encoding Dataset": [AA_property_dataset[-11:]],
+                    "Encoding Dataset": [AA_property_dataset[-10:]],
                     "Test Set R Squared": [r2],
                 }
             )
@@ -394,10 +394,10 @@ def retrain_predict_mpnr(
 
             # file saving
             newmut.to_csv(
-                save_path / f"{AA_property_dataset[-11:]}_novel_library_predictions.csv"
+                save_path / f"{AA_property_dataset[-10:]}_novel_library_predictions.csv"
             )
             test_set_df.to_csv(
-                save_path / f"{AA_property_dataset[-11:]}_test_set_predictions.csv"
+                save_path / f"{AA_property_dataset[-10:]}_test_set_predictions.csv"
             )
 
 
@@ -440,7 +440,7 @@ def retrain_predict_rfr(
         # extract encoding data for specific iteration
         volume_dict = {
             "Amino Acid Code": encoding_data[encoding_data.columns[0]],
-            AA_property_dataset[-11:]: encoding_data[AA_property_dataset],
+            AA_property_dataset[-10:]: encoding_data[AA_property_dataset],
         }
         volume_data = pd.DataFrame(volume_dict)
 
@@ -557,7 +557,7 @@ def retrain_predict_rfr(
             # append the data to a dataframe for export
             inter_df = pd.DataFrame(
                 {
-                    "Encoding Dataset": [AA_property_dataset[-11:]],
+                    "Encoding Dataset": [AA_property_dataset[-10:]],
                     "Test Set R Squared": [r2],
                 }
             )
@@ -578,8 +578,8 @@ def retrain_predict_rfr(
             test_set_df["Predicted"] = y_pred
 
             newmut.to_csv(
-                save_path / f"{AA_property_dataset[-11:]}_novel_library_predictions.csv"
+                save_path / f"{AA_property_dataset[-10:]}_novel_library_predictions.csv"
             )
             test_set_df.to_csv(
-                save_path / f"{AA_property_dataset[-11:]}_test_set_predictions.csv"
+                save_path / f"{AA_property_dataset[-10:]}_test_set_predictions.csv"
             )

@@ -111,7 +111,7 @@ def clean_variants(metadata_list: List[Dict[str, str]]) -> pd.DataFrame:
     variant_name = metadata_list[0]["Variant For Optimization Name"]
 
     variant_df, testing_df, base_info = cnl.create_variant_dataframe(
-        variant_library_filepath=BACKEND_DATA_DIR / "combined_dataset.csv",
+        variant_library_filepath=INTERMEDIATE_DATA_DIR / "combined_dataset.csv",
         reference_variant_for_base_mutation=reference_variant_for_base_mutation,
         variant_name=variant_name,
     )
@@ -328,3 +328,5 @@ if __name__ == "__main__":
 
     ensemble_df.to_csv(OUTPUT_DIR / "Ensemble_insilico_predictions_.csv")
     r_squared_dict.to_csv(OUTPUT_DIR / "Cross_Validation_Scores.csv")
+
+    logging.info('Done! Check your predictions now!')
