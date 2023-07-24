@@ -3,11 +3,6 @@
 [![DOI](https://zenodo.org/badge/{666693326}.svg)](https://zenodo.org/badge/latestdoi/{666693326})
 #[![Build Status]()
 
-### CITATION
-**If you use the machine learning platform, please cite our [pre-print](https://doi.org/10.1101/2023.04.13.536801)!**  
-
-
-
 `ProteiML` is a machine learning ensemble pipeline that reads in sequence-to-function mutational datasets and outputs suggested mutations in order to optimize protein functionality. 
 
 - [Overview](#overview)
@@ -18,8 +13,13 @@
 - [License](#license)
 - [Issues](https://github.com/sarahwaity/ProteiML/issues)
 
+
+### CITATION
+**If you use the machine learning platform, please cite our [pre-print](https://doi.org/10.1101/2023.04.13.536801)!**  
+
+
 # Overview
-`ProteiML` represents is a plug-and-play tool tailored for protein engineers seeking to enhance the optimization of functional proteins. `ProteiML`'s power and utility resides in its human-out-of-loop decision-making capability. `ProteiML` learns from large mutation datasets and extracts mutational trends that often evade researchers capacity to percieve in large datasets. These insights, which researchers may find challenging to ascertain, are synthesized into a comprehensive list of suggested mutations. Furthermore, the platform accomplishes this feat within a remarkably short timeframe, delivering results in a matter of hours—a process that would otherwise demand days when employing traditional avenues like protein structure analysis and literature review.
+`ProteiML` represents is a plug-and-play tool tailored for protein engineers seeking to optimize functional proteins. `ProteiML`'s power and utility resides in its human-out-of-loop decision-making capability. `ProteiML` learns from large mutation datasets and extracts mutational trends that often evade researchers capacity to percieve in large datasets. These insights, which researchers may find challenging to ascertain, are synthesized into a comprehensive list of suggested mutations. Furthermore, the platform accomplishes this feat within a remarkably short timeframe, delivering results in a matter of hours—a process that would otherwise demand days when employing traditional avenues like protein structure analysis and literature review.
 
 
 # System Requirements
@@ -39,8 +39,8 @@ This package is supported for *macOS* and *Linux*. The package has been tested o
 - [numpy](http://www.numpy.org/) (>=1.16.0)
 - [pandas](https://pandas.pydata.org/)
 - [SciPy](https://scipy.org/)
-- [scikit-learn] (https://scikit-learn.org/stable/)
-- [seaborn] (https://seaborn.pydata.org/)
+- [scikit-learn](https://scikit-learn.org/stable/)
+- [seaborn](https://seaborn.pydata.org/)
 
 
 
