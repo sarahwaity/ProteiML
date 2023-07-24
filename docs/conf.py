@@ -36,7 +36,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
     "sphinx.ext.mathjax",
-    "napoleon",
+    "sphinx.ext.napoleon",
     "sphinx.ext.ifconfig",
     "sphinx.ext.githubpages",
     "sphinxcontrib.rawfiles",
