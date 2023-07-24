@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ml_paper"
-version = "0.1.0"
+version = "v0.1.0"
 description = "A set of scripts to clean, prepare, and to perform machine-learning analysis on protein mutation libraries."
 authors = ["Sarah Wait <sarah.j.wait@gmail.com>"]
 readme = "README.md"
