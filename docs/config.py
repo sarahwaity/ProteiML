@@ -25,7 +25,7 @@ copyright = "2023"
 authors = u"sarahwaity"
 
 # The short X.Y version
-version = 'v0.0.1'
+version = 'v0.1.0'
 # The full version, including alpha/beta/rc tags
 release = "alpha"
 
