@@ -6,3 +6,4 @@ test:
     - test
   script:
     - echo "Success!"
+    - echo "Please Work"
