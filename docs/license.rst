@@ -27,12 +27,6 @@ ProteiML is distributed with an MIT license.
     SOFTWARE.
 
 
-.. toctree::
-   :maxdepth: 1
-
-   tutorial
-   install
-   license
 
 
 

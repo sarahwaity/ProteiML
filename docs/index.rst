@@ -20,7 +20,7 @@ Motivation
 Traditional engineering of functional proteins has relied on a trial-and-error mutagenesis approach that depends on researchers fundamental understanding of protein dynamics to achieve optimized proteins. This methodology is time, resource, and intellectually demanding. With ``ProteiML``, identifying advantageous mutations is streamlined, accelerating the pace of protein engineering and opening doors to a new era of functional protein design. 
 
 About
-------
+-----
 
 ``ProteiML`` is a machine learning based protein engineering tool
 
@@ -36,7 +36,6 @@ Join us on `GitHub <https://github.com/sarahwaity/ProteiML>`_.
 .. toctree::
    :maxdepth: 1
 
-   tutorial
    install
    license
 

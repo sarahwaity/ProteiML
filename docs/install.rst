@@ -19,7 +19,6 @@ Within a new terminal instance, navigate to the ProteiML directory and run the f
      $ pip install poetry
      $ poetry install
      $ poetry shell
-**Virtual environment is ready!**
 
 
 Running ProteiML
@@ -98,10 +97,19 @@ that package installed, follow the directions on the `pytest homepage
 <https://docs.pytest.org/en/latest/>`_.
 
 
-.. toctree::
-   :maxdepth: 1
+Tutorial
+========
+A step by step tutorial to run a demo of the platform is currently hosted on youtube!
 
-   tutorial
-   install
-   license
-   
+Downloading From GitHub and Initializing the Virtual Environment:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`GitHub Download & Virtual Enironment Initialization <https://github.com/sarahwaity/ProteiML>`_
+
+Running a Demo of the code:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`ProteiML Code Demo <https://github.com/sarahwaity/ProteiML>`_
+
+
+Running the test suite:
+~~~~~~~~~~~~~~~~~~~~~~~
+`GitHub Repository <https://github.com/sarahwaity/ProteiML>`_
