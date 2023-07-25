@@ -30,7 +30,7 @@ The user will provide and updated "user_input.csv" as well as a known mutation l
 
 # System Requirements
 ## Hardware requirements
-`ProteiML` requires only a standard computer with enough RAM to support the in-memory operations, however the speed of computation can be improved with larger RAMs.
+`ProteiML` requires only a standard computer with enough RAM to support the in-memory operations, however the speed of computation can be improved with faster CPUs.
 
 ## Software requirements
 ### OS Requirements
