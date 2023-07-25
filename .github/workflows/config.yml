@@ -23,4 +23,4 @@ jobs:
         poetry install --no-root
     - name: Test with pytest
       run: |
-        python -m pytest --cov-report term --cov=. tests/
+        python -m pytest --cov-report term --cov=
