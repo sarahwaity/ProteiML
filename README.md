@@ -22,7 +22,7 @@
 
 
 # Overview
-`ProteiML` represents is a plug-and-play tool tailored for protein engineers seeking to optimize functional proteins. `ProteiML`'s power and utility resides in its human-out-of-loop decision-making capability. `ProteiML` learns from large mutation datasets and extracts mutational trends that often evade researchers capacity to percieve in large datasets. These insights, which researchers may find challenging to ascertain, are synthesized into a comprehensive list of suggested mutations. Furthermore, the platform accomplishes this feat within a remarkably short timeframe, delivering results in a matter of hours—a process that would otherwise demand days when employing traditional avenues like protein structure analysis and literature review.
+`ProteiML` is a plug-and-play tool tailored for protein engineers seeking to optimize functional proteins. `ProteiML`'s power and utility resides in its human-out-of-loop decision-making capability. `ProteiML` learns from large mutation datasets and extracts mutational trends that often evade researchers capacity to percieve in large datasets. These insights, which researchers may find challenging to ascertain, are synthesized into a comprehensive list of suggested mutations. Furthermore, the platform accomplishes this feat within a remarkably short timeframe, delivering results in a matter of hours—a process that would otherwise demand days when employing traditional avenues like protein structure analysis and literature review.
 
 # Documentation
 All Documentation for ProteiML is hosted through [ReadTheDocs](https://proteiml.readthedocs.io/en/latest/index.html)
