@@ -22,7 +22,7 @@ Traditional engineering of functional proteins has relied on a trial-and-error m
 About
 ------
 
-``ProteiML`` 
+``ProteiML`` is a machine learning based protein engineering tool
 
 
 Free software
@@ -33,17 +33,12 @@ terms of the :doc:`MIT License </license>`.  We welcome contributions.
 Join us on `GitHub <https://github.com/sarahwaity/ProteiML>`_.
 
 
-Documentation
-=============
-
-``ProteiML`` is a machine learning based protein engineering tool
-
 .. toctree::
    :maxdepth: 1
 
+   tutorial
    install
    license
-   tutorial
 
 .. toctree::
    :maxdepth: 1
