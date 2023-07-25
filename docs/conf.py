@@ -39,8 +39,6 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.ifconfig",
     "sphinx.ext.githubpages",
-    "nbsphinx",
-    "sphinx.ext.intersphinx",
 ]
 
 # -- sphinxcontrib.rawfiles
