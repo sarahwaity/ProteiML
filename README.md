@@ -10,6 +10,7 @@
 - [Overview](#overview)
 - [Documentation](#documentation)
 - [Methodology Description](#Methodology-Description)
+- [Tutorial](#Tutorial)
 - [System Requirements](#system-requirements)
 - [Installation & Run Guide](#installation-&-Run-guide)
 - [License](#license)
@@ -25,6 +26,10 @@
 
 # Documentation
 All Documentation for ProteiML is hosted through [ReadTheDocs](https://proteiml.readthedocs.io/en/latest/index.html)
+
+# Tutorial
+## Running a Demo of the code performing local testing:
+[ProteiML Code Demo](https://www.youtube.com/watch?v=2YPP6vm1DtA)
 
 # Methodology Description
 <img src=workflow.png width=500 align="right" vspace = "50">

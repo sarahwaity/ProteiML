@@ -101,15 +101,11 @@ Tutorial
 ========
 A step by step tutorial to run a demo of the platform is currently hosted on youtube!
 
-Downloading From GitHub and Initializing the Virtual Environment:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`GitHub Download & Virtual Enironment Initialization <https://github.com/sarahwaity/ProteiML>`_
-
-Running a Demo of the code:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`ProteiML Code Demo <https://github.com/sarahwaity/ProteiML>`_
+Running a Demo of the code performing local testing:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`ProteiML Code Demo <https://www.youtube.com/watch?v=2YPP6vm1DtA>`_
 
 
-Running the test suite:
-~~~~~~~~~~~~~~~~~~~~~~~
-`GitHub Repository <https://github.com/sarahwaity/ProteiML>`_
+Initializing a Brand New Instance of ProteiML:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Coming soon*
