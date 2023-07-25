@@ -96,3 +96,12 @@ Testing
 ProteiML uses the Python ``pytest`` testing package.  If you don't already have
 that package installed, follow the directions on the `pytest homepage
 <https://docs.pytest.org/en/latest/>`_.
+
+
+.. toctree::
+   :maxdepth: 1
+
+   tutorial
+   install
+   license
+   

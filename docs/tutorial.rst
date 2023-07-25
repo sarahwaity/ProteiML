@@ -14,3 +14,10 @@ Running a Demo of the code:
 Running a Demo of the code:
 ---------------------------
 `GitHub Repository <https://github.com/sarahwaity/ProteiML>`_
+
+.. toctree::
+   :maxdepth: 1
+
+   tutorial
+   install
+   license
