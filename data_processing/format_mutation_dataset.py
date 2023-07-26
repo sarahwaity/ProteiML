@@ -127,7 +127,7 @@ def read_seq_data(
 
         if type(mutation_loc[0]) is int:  # tests to see if row is the base construct
             for mut in range(len(mutation_loc)):
-                x[mutation_loc[mut]] = mutation_aa[
+                x[mutation_loc[mut]-1] = mutation_aa[
                     mut
                 ]  # inplace mutation onto base sequence
             x.append(
