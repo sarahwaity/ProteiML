@@ -18,7 +18,7 @@
 
 
 ### CITATION
-*If you use `ProteiML`, please cite our [Nature Computational Science Publication]([https://doi.org/10.1101/2023.04.13.536801])!*  
+*If you use `ProteiML`, please cite our [Nature Computational Science Publication](https://doi.org/10.1038/s43588-024-00611-w)!*  
 
 
 # Overview
